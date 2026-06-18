@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>就活面接練習ゲーム</title>
+  <link rel="apple-touch-icon" href="assets/images/app-icon.png">
+  <link rel="icon" href="assets/images/app-icon.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <section id="start-screen" class="start-screen" aria-label="メイン画面">
+      <img class="start-screen__image" src="assets/images/start_screen.png" alt="">
+      <div class="start-screen__vignette" aria-hidden="true"></div>
+
+      <header class="home-status-bar" aria-label="プレイヤーステータス">
+        <span id="home-player-level">PLAYER Lv.1</span>
+        <span id="home-next-exp">次のLvまで 100 EXP</span>
+        <span id="home-play-count">CLEAR 0</span>
+        <div class="home-exp-gauge" aria-label="経験値ゲージ">
+          <span id="home-exp-fill"></span>
+        </div>
+      </header>
+
+      <section class="home-main-actions" aria-label="メインモード">
+        <button id="home-interview-button" class="home-action-button home-action-primary" type="button">
+          <em>INTERVIEW</em>
+          <strong>面接</strong>
+          <span>初級・中級・上級・ケース面接</span>
+        </button>
+        <button id="home-training-button" class="home-action-button" type="button">
+          <em>TRAINING</em>
+          <strong>トレーニング</strong>
+          <span>敬語クイズ・就活専門用語</span>
+        </button>
+      </section>
+    </section>
+
+    <section id="title-screen" class="title-screen hidden">
+      <div class="title-box">
+        <p class="eyebrow">INTERVIEW TRAINING</p>
+        <h1>面接モード選択</h1>
+        <p class="title-lead">挑戦する面接モードを選んでください。</p>
+        <div class="level-buttons">
+          <button class="level-button" type="button" data-level="beginner">
+            <em>BEGINNER</em>
+            <strong>初級</strong>
+            <span>入室から退出までの基本マナー</span>
+          </button>
+          <button class="level-button" type="button" data-level="intermediate">
+            <em>INTERMEDIATE</em>
+            <strong>中級</strong>
+            <span>自己PR・志望動機・深掘り質問</span>
+          </button>
+          <button class="level-button" type="button" data-level="advanced">
+            <em>ADVANCED</em>
+            <strong>上級</strong>
+            <span>最終面接・圧迫気味の質問・価値観の深掘り</span>
+          </button>
+          <button class="level-button" type="button" data-level="case">
+            <em>CASE INTERVIEW</em>
+            <strong>ケース面接</strong>
+            <span>対話で進める構造化・仮説・施策提案</span>
+          </button>
+          <button id="mode-home-button" class="main-button home-return-button" type="button">メインへ戻る</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="training-screen" class="title-screen training-screen hidden" aria-label="トレーニング選択画面">
+      <div class="title-box">
+        <p class="eyebrow">TRAINING</p>
+        <h1>トレーニング</h1>
+        <p class="title-lead">言葉遣いと就活知識を、櫻みゆきと一緒に磨きましょう。</p>
+        <div class="level-buttons">
+          <button class="level-button" type="button" data-level="keigo">
+            <em>KEIGO QUIZ</em>
+            <strong>敬語クイズ</strong>
+            <span>尊敬語・謙譲語・丁寧語を2択で練習</span>
+          </button>
+          <button class="level-button" type="button" data-level="terms">
+            <em>JOB TERMS</em>
+            <strong>就活専門用語トレーニング</strong>
+            <span>初級から上級まで、就活用語をゲーム感覚で確認</span>
+          </button>
+          <button id="training-home-button" class="main-button home-return-button" type="button">メインへ戻る</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="game-screen" class="game-screen hidden" aria-label="面接練習画面">
+      <div class="scene-frame">
+        <button id="back-to-start-button" class="back-button hidden" type="button" aria-label="スタートへ戻る">
+          <svg class="back-button-icon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M15 5L8 12L15 19" />
+          </svg>
+          <span class="back-button-text">戻る</span>
+        </button>
+
+        <div class="asset-warning" id="asset-warning">
+          画像が見つからない場合でも、この画面はそのまま操作できます。
+        </div>
+
+        <div class="interviewer-frame" aria-hidden="true">
+          <img id="interviewer" class="interviewer interviewer-img" src="assets/images/miyuki_normal.png" alt="">
+        </div>
+
+        <div class="dialog-panel">
+          <div class="dialog-header">
+            <span id="progress-text">Q1</span>
+            <span id="speaker-label">面接官</span>
+          </div>
+          <div class="dialog-scroll">
+            <p id="interviewer-comment" class="interviewer-comment"></p>
+            <p id="question-text" class="question-text"></p>
+            <div id="answer-list" class="answer-list"></div>
+            <p id="evaluation-text" class="evaluation-text hidden"></p>
+          </div>
+          <button id="next-button" class="main-button next-button hidden" type="button">次の質問へ</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="finish-screen" class="finish-screen hidden" aria-label="結果画面">
+      <div class="result-scene-frame">
+        <button id="result-back-to-start-button" class="back-button" type="button" aria-label="メインへ戻る">
+          <svg class="back-button-icon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M15 5L8 12L15 19" />
+          </svg>
+          <span class="back-button-text">戻る</span>
+        </button>
+        <div class="result-interviewer-frame">
+          <img id="result-interviewer" class="result-interviewer" src="assets/images/miyuki_normal.png" alt="面接官">
+        </div>
+
+        <div class="dialog-panel result-box">
+          <div class="dialog-header result-header">
+            <span id="result-level" class="result-level"></span>
+            <span class="result-heading">RESULT</span>
+          </div>
+          <div class="result-scroll">
+            <p class="result-speaker">櫻みゆき</p>
+            <h2 id="result-title">判定</h2>
+            <p id="result-score" class="result-score"></p>
+            <div id="result-exp-summary" class="result-exp-summary"></div>
+            <p id="finish-comment" class="result-comment"></p>
+          </div>
+          <div class="result-actions">
+            <button id="retry-button" class="main-button" type="button">もう一度プレイする</button>
+            <button id="result-mode-button" class="main-button result-mode-button" type="button">メインへ戻る</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="keigo-quiz-data.js"></script>
+  <script src="shukatsu-terms-data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
