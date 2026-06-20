@@ -10,21 +10,11 @@ interview-game-roan.vercel.app
 
 interview-game-roan.vercel.app
 
-### スタート画面（メインハブ）
-<img width="868" height="1887" alt="S__107266051_0" src="https://github.com/user-attachments/assets/1cbecc7c-adcd-46b5-b381-c897b72d5b03" />
+## スクリーンショット
 
-
-### 面接モード：プレイ画面
-<img width="868" height="1887" alt="S__107266052_0" src="https://github.com/user-attachments/assets/d813c8c9-af3a-436f-b9cc-b52ce6a8d383" />
-
-
-### 回答へのフィードバック・解説
-<img width="868" height="1887" alt="S__107266053_0" src="https://github.com/user-attachments/assets/b1cc745a-e7a3-4f69-9aa7-e7d5f0431c69" />
-
-
-### 結果・育成（EXP / レベルアップ）
-<img width="868" height="1887" alt="S__107266054_0" src="https://github.com/user-attachments/assets/b3ce9027-8cd1-4c93-aa78-fb5f0e7c2e21" />
-
+| スタート画面 | 面接プレイ画面 | フィードバック | 結果・育成 |
+| :---: | :---: | :---: | :---: |
+| <img width="180" alt="スタート画面" src="https://github.com/user-attachments/assets/1cbecc7c-adcd-46b5-b381-c897b72d5b03" /> | <img width="180" alt="面接プレイ画面" src="https://github.com/user-attachments/assets/d813c8c9-af3a-436f-b9cc-b52ce6a8d383" /> | <img width="180" alt="フィードバック" src="https://github.com/user-attachments/assets/b1cc745a-e7a3-4f69-9aa7-e7d5f0431c69" /> | <img width="180" alt="結果・育成" src="https://github.com/user-attachments/assets/b3ce9027-8cd1-4c93-aa78-fb5f0e7c2e21" /> |
 
 
 ## 概要
